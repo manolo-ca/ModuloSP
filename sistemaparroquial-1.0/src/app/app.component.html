@@ -1,0 +1,51 @@
+
+        <div class="wrapper"
+            [ngClass]="{'sidebar-inactive-l':menuInactiveDesktop, 'sidebar-active-m':menuActiveMobile}">
+            <div class="topbar clearfix" style="background: rgba(0, 53, 109, 0.877);">
+                <a id="omega-menu-button" href="#" (click)="toggleMenu($event)">
+                    <span class="fa fa-bars"></span>
+                </a>
+                <span class="topbar-title"></span>
+                <a id="options-menu-button" href="#" (click)="toggleTopMenu($event)">
+                    <span class="fa fa-ellipsis-h"></span>
+                </a>
+                <div id="topbar-icons" class="animated"
+                    [ngClass]="{'topbar-icons-visible flipInX':topMenuActive,'flipOutX':topMenuLeaving}">
+                    <a href="#">
+                        <span class="topbar-item-text">Configuración</span>
+                        <span class="topbar-icon fa fa-gear"></span>
+                    </a>
+                    <a href="#">
+                        <span class="topbar-item-text">Cuenta</span>
+                        <span class="topbar-icon fa fa-user"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar" (click)="onMenuClick()">
+                <p-scrollPanel #scroller [style]="{height: '100%'}">
+                    <div class="sidebar-scroll-content">
+                        <div class="logo" style="color: rgba(255, 255, 255, 0.795);">
+                            <span style="font-size: 15px; font-family: Helvetica;"> <b>Parroquia San Joaquín</b> </span>
+                        </div>
+                        <div class="profile">
+                            <img src="assets/layout/images/sanjoaquin.jpg" alt="" />
+                            <a id="profile-button" href="#" (click)="toggleProfile($event)">
+                                <span class="username"><i class="fa fa-fw fa-cog"></i>Usuario</span>
+                            </a>
+                            <ul [@submenu]="profileActive ? 'visible' : 'hidden'">
+                                <li><a href="#"><i class="fa fa-fw fa-sliders"></i><span>Cuenta</span></a></li>
+                                <li><a href="#"><i class="fa fa-fw fa-bell"></i><span>Notificaciones</span></a></li>
+                                <li><a href="#"><i class="fa fa-fw fa-sign-out"></i><span>Cerrar Sesión</span></a></li>
+                            </ul>
+                        </div>
+                        <app-menu></app-menu>
+                    </div>
+                </p-scrollPanel>
+            </div>
+            <div class="main">
+                <router-outlet></router-outlet>
+            </div>
+            <div class="footer" style="display: flex;justify-content: center;align-items: center;">
+                <span class="footer-text">Sistema de Gestión Parroquial - Parroquia San Joaquín</span>
+            </div>
+        </div>

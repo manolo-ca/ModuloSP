@@ -1,0 +1,46 @@
+<div class="wrapper">
+    <body class="login-body" *ngIf="!logeado; else perfil">
+        <div id="login-wrapper">
+            <img src="assets/logo2.png">
+            <div id="login-container" style="border-radius: 21px 21px 21px 21px;
+                -moz-border-radius: 21px 21px 21px 21px;
+                -webkit-border-radius: 21px 21px 21px 21px;
+                border: 0px solid #000000;">
+                <span class="title">Sistema de Gestión Parroquial</span>
+                <div class="ui-g ui-fluid">
+                    <form [formGroup]="addForm">
+                        <div class="ui-g-12">
+                            <input type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget" autocomplete="off" formControlName="usu_usuario" name="usu_usuario" 
+                                id="usu_usuario" 
+                                placeholder="Identificación" />
+                        </div>
+                        <div class="ui-g-12">
+                            <input type="password" autocomplete="off" formControlName="usu_password" name="usu_password" 
+                                id="usu_password" class="ui-inputtext ui-corner-all ui-state-default ui-widget"
+                                placeholder="Contraseña" />
+                        </div>
+                        <div class="ui-g-12 ui-md-6">
+                            <span class="remember-me">Recordar</span>
+                            <input type="checkbox">
+                        </div>
+                        <div class="ui-g-12 ui-md-6">
+                            <a href="#">Olvide Contraseña</a>
+                        </div>
+                        <div class="ui-g-12">
+                            <button type="button"
+                                class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left"
+                                (click)="logIn()">
+                                <span class="ui-button-icon-left ui-c fa fa-fw ui-icon-person"></span>
+                                <span class="ui-button-text ui-c">Iniciar Sesión</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="login-footer">Desarrollado en el año 2021. Parroquia San Joaquin</div>
+            <br><br>
+        </div>
+    </body>
+    <ng-template #perfil>
+    </ng-template>
+</div>
