@@ -41,7 +41,13 @@ export class AppMenuComponent implements OnInit {
                 label: 'Servicios Pastorales', icon: 'fa fa-fw fa-gg',
                 items: [
                     {label: 'Registrarse',icon: 'fa fa-fw fa-code', routerLink:'#'},
-                    {label: 'Listar', icon: 'fa fa-fw fa-minus-square-o',routerLink:'#'},
+                    {label: 'Servicios', icon: 'fa fa-fw fa-code',routerLink:'#',
+                    items: [
+                        {label: 'Emision de Certificados',icon: 'fa fa-fw fa-minus-square-o', routerLink:'#'},
+                        {label: 'Reservacion a Eucaristias aaaa', icon: 'fa fa-fw fa-minus-square-o',routerLink:'#'},
+                        {label: 'Inscripcion a Eucaristias', icon: 'fa fa-fw fa-minus-square-o',routerLink:'#'}
+                    ]
+                },
                 ]
             },
             
