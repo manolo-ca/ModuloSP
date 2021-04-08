@@ -102,10 +102,34 @@ import { MatCheckboxModule } from '@angular/material';
 import {ModuloComponent} from './Inicio/modulo/modulo.component';
 import { LoginService } from './login/login.service';
 import { LoginComponent} from './login/login.component';
+import { ServicioslistaComponent } from './modulosp/administrar/servicioslista/servicioslista.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ServicioslistacrearComponent } from './modulosp/administrar/servicioslistacrear/servicioslistacrear.component';
+import { TiposdocumentosComponent } from './modulosp/administrar/tiposdocumentos/tiposdocumentos.component';
+import { TiposdocumentoscrearComponent } from './modulosp/administrar/tiposdocumentoscrear/tiposdocumentoscrear.component';
+import { EmiciondocumentosComponent } from './modulosp/administrar/emiciondocumentos/emiciondocumentos.component';
+import { EmisiondocumentosusuarioComponent } from './modulosp/usuario/emisiondocumentosusuario/emisiondocumentosusuario.component';
+import { ReservacioneucaristiasusuarioComponent } from './modulosp/usuario/reservacioneucaristiasusuario/reservacioneucaristiasusuario.component';
+import { DocumentopersonasComponent } from './modulosp/administrar/documentopersonas/documentopersonas.component';
+import { ReservacioneucaristiasComponent } from './modulosp/administrar/reservacioneucaristias/reservacioneucaristias.component';
+import { InscripcioneucaristiasComponent } from './modulosp/administrar/inscripcioneucaristias/inscripcioneucaristias.component';
 
+const routes: Routes=[
+  {path:'',redirectTo:'', pathMatch:'full'},
+  {path:'modulosp/administrar/servicioslista',component:ServicioslistaComponent},
+  {path:'modulosp/administrar/servicioslistacrear',component:ServicioslistacrearComponent},
+  {path:'modulosp/administrar/tiposdocumentos',component:TiposdocumentosComponent},
+  {path:'modulosp/administrar/tiposdocumentoscrear',component:TiposdocumentoscrearComponent},
+  {path:'modulosp/administrar/documentopersonas',component:DocumentopersonasComponent},
+  {path:'modulosp/administrar/emiciondocumentos',component:EmiciondocumentosComponent},
+  {path:'modulosp/administrar/inscripcioneucaristias',component:InscripcioneucaristiasComponent},
+  {path:'modulosp/administrar/reservacioneucaristias',component:ReservacioneucaristiasComponent},
+  {path:'modulosp/usuario/emisiondocumentosusuario',component:EmisiondocumentosusuarioComponent},
+  {path:'modulosp/usuario/reservacioneucaristiasusuario',component:ReservacioneucaristiasusuarioComponent}
+];
 @NgModule({
   declarations: [
-
+    
     AppComponent,
     ModuloComponent,
     LoginComponent,
@@ -125,10 +149,24 @@ import { LoginComponent} from './login/login.component';
     EmptyDemoComponent,
     FileDemoComponent,
     UtilsDemoComponent,
-    DocumentationComponent
+    DocumentationComponent,
+    ServicioslistaComponent,
+    ServicioslistacrearComponent,
+    TiposdocumentosComponent,
+    TiposdocumentoscrearComponent,
+    EmiciondocumentosComponent,
+    EmisiondocumentosusuarioComponent,
+    ReservacioneucaristiasusuarioComponent,
+    ReservacioneucaristiasComponent,
+    DocumentopersonasComponent,
+    InscripcioneucaristiasComponent
   ],
-  imports: [
 
+  
+  imports: [
+    DropdownModule,
+    FormsModule,
+    RouterModule.forRoot(routes),
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

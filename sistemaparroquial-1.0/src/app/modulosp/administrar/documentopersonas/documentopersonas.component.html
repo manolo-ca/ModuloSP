@@ -1,0 +1,70 @@
+<p>Emicion de documentos administrador</p>
+
+<div class="card">
+    <h5>Filter Menu</h5>
+    <p>Filters are displayed in an overlay.</p>
+    <p-table #dt1 [value]="documentospersonas" dataKey="id"
+        [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" styleClass="p-datatable-customers p-datatable-gridlines"
+        [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [globalFilterFields]="['id','nombre','apellido','documento']">
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex">
+                <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
+                <span class="p-input-icon-left p-ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
+                </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Id 
+                        <p-columnFilter type="text" field="id" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Nombre 
+                        <p-columnFilter type="text" field="nombre" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Apellido 
+                        <p-columnFilter type="text" field="apellido" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Documento
+                        <p-columnFilter type="date" field="documentos" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+ 
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-documentosp>
+            <tr>
+                <td>
+                    {{documentosp.id}}
+                </td>
+                <td>
+                   {{documentosp.nombre}}
+                </td>
+                <td>
+                   {{documentosp.apellido}}
+                </td>
+                <td>
+                    {{documentosp.documentos}}
+                </td>       
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="7">No registros</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

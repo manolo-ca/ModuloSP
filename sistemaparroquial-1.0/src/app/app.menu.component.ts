@@ -41,10 +41,22 @@ export class AppMenuComponent implements OnInit {
                 label: 'Servicios Pastorales', icon: 'fa fa-fw fa-gg',
                 items: [
                     {label: 'Registrarse',icon: 'fa fa-fw fa-code', routerLink:'#'},
+                    {label: 'Administrar',icon: 'fa fa-fw fa-code', routerLink:'#',
+                    items: [
+                        
+                        {label: 'Administrar servicios',icon: 'fa fa-fw fa-minus-square-o', routerLink:'modulosp/administrar/servicioslista'},
+                        {label: 'Administrar tipo de documentos', icon: 'fa fa-fw fa-minus-square-o',routerLink:'modulosp/administrar/tiposdocumentos'},
+                        {label: 'Administrar Documentos persona', icon: 'fa fa-fw fa-minus-square-o',routerLink:'modulosp/administrar/documentopersonas'},
+                        {label: 'Administrar tipo de eucaristias', icon: 'fa fa-fw fa-minus-square-o',routerLink:'#'},
+                        {label: 'Administrar Inscricion a eucaristias', icon: 'fa fa-fw fa-minus-square-o',routerLink:'modulosp/administrar/inscripcioneucaristias'},
+                        {label: 'Administrar Reservacion eucaristias', icon: 'fa fa-fw fa-minus-square-o',routerLink:'modulosp/administrar/reservacioneucaristias'}
+                    ]
+                    },
                     {label: 'Servicios', icon: 'fa fa-fw fa-code',routerLink:'#',
                     items: [
-                        {label: 'Emision de Certificados',icon: 'fa fa-fw fa-minus-square-o', routerLink:'#'},
-                        {label: 'Reservacion a Eucaristias', icon: 'fa fa-fw fa-minus-square-o',routerLink:'#'},
+                        
+                        {label: 'Emision de Documentos',icon: 'fa fa-fw fa-minus-square-o', routerLink:'modulosp/usuario/emisiondocumentosusuario'},
+                        {label: 'Reservacion a Eucaristias', icon: 'fa fa-fw fa-minus-square-o',routerLink:'modulosp/usuario/reservacioneucaristiasusuario'},
                         {label: 'Inscripcion a Eucaristias', icon: 'fa fa-fw fa-minus-square-o',routerLink:'#'}
                     ]
                 },

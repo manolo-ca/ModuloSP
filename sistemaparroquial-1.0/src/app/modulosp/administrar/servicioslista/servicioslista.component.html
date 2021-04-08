@@ -1,0 +1,31 @@
+
+<div class="card">
+<button pButton type="button" label="Crear" class="p-button-warning"
+ [routerLink]="['/modulosp/administrar/servicioslistacrear']"></button>
+</div>
+<div class="card">
+    <p-table [value]="servicios">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-servicio>
+        <tr>
+            <td>{{servicio.id}}</td>
+            <td>{{servicio.nombre}}</td>
+            <td>{{servicio.descripcion}}</td>
+            <td>  <button pButton type="button" label="Editar" ></button></td>
+            <td>  <button pButton type="button" label="Eliminar" class="p-button-warning"></button></td>
+        </tr>
+     
+    </ng-template>
+</p-table>
+</div>
+
+
+
