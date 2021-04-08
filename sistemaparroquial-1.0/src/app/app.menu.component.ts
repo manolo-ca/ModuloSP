@@ -41,7 +41,7 @@ export class AppMenuComponent implements OnInit {
                 label: 'Servicios Pastorales', icon: 'fa fa-fw fa-gg',
                 items: [
                     {label: 'Registrarse',icon: 'fa fa-fw fa-code', routerLink:'#'},
-                    {label: 'Administrar',icon: 'fa fa-fw fa-code', routerLink:'#',
+                    {label: 'Administrar',icon: 'fa fa-fw fa-code',
                     items: [
                         
                         {label: 'Administrar servicios',icon: 'fa fa-fw fa-minus-square-o', routerLink:'modulosp/administrar/servicioslista'},

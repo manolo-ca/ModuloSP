@@ -113,6 +113,7 @@ import { ReservacioneucaristiasusuarioComponent } from './modulosp/usuario/reser
 import { DocumentopersonasComponent } from './modulosp/administrar/documentopersonas/documentopersonas.component';
 import { ReservacioneucaristiasComponent } from './modulosp/administrar/reservacioneucaristias/reservacioneucaristias.component';
 import { InscripcioneucaristiasComponent } from './modulosp/administrar/inscripcioneucaristias/inscripcioneucaristias.component';
+import { DocumentopersonascrearComponent } from './modulosp/administrar/documentopersonascrear/documentopersonascrear.component';
 
 const routes: Routes=[
   {path:'',redirectTo:'', pathMatch:'full'},
@@ -121,11 +122,17 @@ const routes: Routes=[
   {path:'modulosp/administrar/tiposdocumentos',component:TiposdocumentosComponent},
   {path:'modulosp/administrar/tiposdocumentoscrear',component:TiposdocumentoscrearComponent},
   {path:'modulosp/administrar/documentopersonas',component:DocumentopersonasComponent},
+  {path:'modulosp/administrar/documentopersonascrear',component:DocumentopersonascrearComponent},
   {path:'modulosp/administrar/emiciondocumentos',component:EmiciondocumentosComponent},
   {path:'modulosp/administrar/inscripcioneucaristias',component:InscripcioneucaristiasComponent},
   {path:'modulosp/administrar/reservacioneucaristias',component:ReservacioneucaristiasComponent},
+
+
+  
   {path:'modulosp/usuario/emisiondocumentosusuario',component:EmisiondocumentosusuarioComponent},
   {path:'modulosp/usuario/reservacioneucaristiasusuario',component:ReservacioneucaristiasusuarioComponent}
+
+  
 ];
 @NgModule({
   declarations: [
@@ -159,7 +166,8 @@ const routes: Routes=[
     ReservacioneucaristiasusuarioComponent,
     ReservacioneucaristiasComponent,
     DocumentopersonasComponent,
-    InscripcioneucaristiasComponent
+    InscripcioneucaristiasComponent,
+    DocumentopersonascrearComponent
   ],
 
   
