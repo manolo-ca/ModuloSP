@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Documentopersonasejemplo } from './documentopersonasejemplo';
+
 @Component({
   selector: 'app-documentopersonas',
   templateUrl: './documentopersonas.component.html'
