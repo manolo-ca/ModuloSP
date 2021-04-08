@@ -8,28 +8,24 @@ export class DocumentopersonascrearComponent implements OnInit {
   documentospersonas:Documentopersonascrearejemplo[]=[
     {
       id:1,
-      nombre: 'Emisison de documentos',
-      apellido: 'Emisison de documentos',
-      documentos: 'Permite solicitar un doumento'
+      tipo_documento: 'Certificado de Matrimonio',
+      libro_nombre: 'libro de matrimonio',
+      referencia: 'pag 2'
   },
   {
     id:2,
-    nombre: 'Emisison de documentos',
-    apellido: 'Emisison de documentos',
-    documentos: 'Permite solicitar un doumento'
-  },
-  {
-    id:3,
-    nombre: 'Emisison de documentos',
-    apellido: 'Emisison de documentos',
-    documentos: 'Permite solicitar un doumento'
-  },
-  {
-    id:4,
-    nombre: 'Emisison de documentos',
-    apellido: 'Emisison de documentos',
-    documentos: 'Permite solicitar un doumento'
-  }
+    tipo_documento: 'Certificado de bautizo',
+    libro_nombre: 'libro de bautizos',
+    referencia: 'pag 23'
+},
+{
+  id:3,
+  tipo_documento: 'Certificado de solteria',
+  libro_nombre: 'N/A',
+  referencia: 'N/A'
+}
+
+
   ];
   constructor() { }
 

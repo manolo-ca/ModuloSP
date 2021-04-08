@@ -39,11 +39,11 @@
 
 
 <div class="card">
-    <h5>Documentos ingresados</h5>
-    <p-table #dt1 [value]="documentospersonas" dataKey="id"
+    <h5>Documentos Registrados</h5>
+    <p-table #dt1 [value]="documentospersonas" dataKey="tipo_documento"
         [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" styleClass="p-datatable-customers p-datatable-gridlines"
         [paginator]="true" currentPageReportTemplate="lista de personas con documentos"
-        [globalFilterFields]="['id','nombre','apellido','documento']">
+        [globalFilterFields]="['id','tipo_documento','libro_nombre','referencia']">
         <ng-template pTemplate="caption">
             <div class="p-d-flex">
                 <span class="p-input-icon-left p-ml-auto">
@@ -62,19 +62,19 @@
                 </th>
                 <th>
                     <div class="p-d-flex p-jc-between p-ai-center">
-                        Nombre 
+                        Documento
                        
                     </div>
                 </th>
                 <th>
                     <div class="p-d-flex p-jc-between p-ai-center">
-                        Apellido 
+                        Libro
                         
                     </div>
                 </th>
                 <th>
                     <div class="p-d-flex p-jc-between p-ai-center">
-                        Documento
+                        Referencia
                         
                     </div>
                 </th>
@@ -93,13 +93,13 @@
                     {{documentosp.id}}
                 </td>
                 <td>
-                   {{documentosp.nombre}}
+                   {{documentosp.tipo_documento}}
                 </td>
                 <td>
-                   {{documentosp.apellido}}
+                   {{documentosp.libro_nombre}}
                 </td>
                 <td>
-                    {{documentosp.documentos}}
+                    {{documentosp.referencia}}
                 </td> 
                 <td>
                     <button pButton label="Eliminar" class="p-button-outlined" icon="pi pi-filter-slash" [routerLink]="['/modulosp/administrar/documentopersonascrear']"></button>

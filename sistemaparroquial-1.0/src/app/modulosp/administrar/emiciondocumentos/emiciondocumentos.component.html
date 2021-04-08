@@ -1,1 +1,127 @@
-<p>formulario de emision de documentos</p>
+
+<div class="card">
+    <h2>Administracion solicitud de documentos </h2><hr>
+    <br>
+    <h5>Solicitudes Registradas</h5><hr>
+    
+    <p-table #dt1 [value]="emiciondocumentos" dataKey="id"
+        [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" styleClass="p-datatable-customers p-datatable-gridlines"
+        [paginator]="true" currentPageReportTemplate="lista de personas con documentos"
+        [globalFilterFields]="['id','fecha_registro','referencias','descripcion','fecha_solicitud','calendario','nombre','tipo_de_documento','estado']">
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex">
+                <span class="p-input-icon-left p-ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Buscar" />
+                </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Codigo 
+                      
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        fecha registro 
+                       
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        referencias 
+                        
+                    </div>
+                </th>
+                
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        descripcion
+                        
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        fecha solicitud 
+                       
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        calendario 
+                        
+                    </div>
+                </th>
+                
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        nombre
+                        
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        tipo de documento
+                        
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        estado
+                        
+                    </div>
+                </th>
+               
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Aprovar
+                        
+                    </div>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-documentosp>
+            <tr>
+                <td>
+                    {{documentosp.id}}
+                </td>
+                <td>
+                   {{documentosp.fecha_registro}}
+                </td>
+                <td>
+                   {{documentosp.referencias}}
+                </td>
+                <td>
+                    {{documentosp.descripcion}}
+                </td>
+                <td>
+                   {{documentosp.fecha_solicitud}}
+                </td>
+                <td>
+                   {{documentosp.calendario}}
+                </td>                
+                <td>
+                   {{documentosp.nombre}}
+                </td>
+                <td>
+                   {{documentosp.tipo_de_documento}}
+                </td>
+                <td>
+                    {{documentosp.estado}}
+                 </td>
+                <td>
+                    <button pButton label="Aprovar" class="p-button-outlined" icon="pi pi-filter-slash"></button>
+               
+                </td>       
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="7">No registros</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

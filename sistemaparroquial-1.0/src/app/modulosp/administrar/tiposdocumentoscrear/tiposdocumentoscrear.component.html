@@ -1,23 +1,40 @@
-<p-dropdown  optionLabel="name"></p-dropdown>
+
 <div class="card">
-    <h1>Creacion de documentos</h1>
+    <h2>Creacion de documentos</h2><hr>
     
-   
-    <div class="p-inputgroup">
-        <span class="p-float-label">
-            <label for="float-input">Nombre</label>
-            <input id="float-input" type="text" pInputText> 
+    <div class="card">
+        <div class="p-grid p-fluid">
+            <div class="p-col-12 p-md-12">
+                <div class="p-inputgroup">
+                    
+                    <input type="text" pInputText placeholder="Nombre Documento">   
+                    <span class="p-inputgroup-addon"></span>      
+                </div>
+            </div>
+            <br>
             
-        </span>  
+            <div class="p-col-12 p-md-12">
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"></span>
+                    
+                    <textarea id="address" type="text" rows="4" pInputTextarea placeholder="Descripcion"></textarea>     
+                    <span class="p-inputgroup-addon"></span> 
+                </div>
+            </div>
+            <div class="p-col-12 p-md-12">
+                <div class="p-inputgroup">
+                    
+                    <input type="number" pInputText placeholder="Valor">   
+                    <span class="p-inputgroup-addon"></span>      
+                </div>
+            </div> 
+            <br>   
+            <br>
+            <button pButton label="Guardar documento" class="p-button-outlined" icon="pi pi-filter-slash" ></button>
+                 
+        </div>
     </div>
-    <div class="p-inputgroup">
-    
-        <span class="p-float-label">
-            <label for="float-input">Descripcion</label>
-            <textarea pInputTextarea> </textarea>
-            
-        </span>    
-    </div>
-    
-    </div>
+
+</div>
+
     

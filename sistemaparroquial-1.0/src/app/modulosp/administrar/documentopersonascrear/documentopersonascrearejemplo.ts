@@ -1,6 +1,7 @@
 export class Documentopersonascrearejemplo {
     id: number;
-    nombre:string;
-    apellido:string;
-    documentos:string;
+    tipo_documento:string;
+    libro_nombre:string;
+    referencia:string;
+    
 }

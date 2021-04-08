@@ -10,26 +10,23 @@ export class DocumentopersonasComponent implements OnInit {
     {
       id:1,
       nombre: 'Emisison de documentos',
-      apellido: 'Emisison de documentos',
-      documentos: 'Permite solicitar un doumento'
+      apellido: 'Emisison de documentos'
+      
   },
   {
     id:2,
     nombre: 'Emisison de documentos',
-    apellido: 'Emisison de documentos',
-    documentos: 'Permite solicitar un doumento'
+    apellido: 'Emisison de documentos'
   },
   {
     id:3,
     nombre: 'Emisison de documentos',
-    apellido: 'Emisison de documentos',
-    documentos: 'Permite solicitar un doumento'
+    apellido: 'Emisison de documentos'
   },
   {
     id:4,
     nombre: 'Emisison de documentos',
-    apellido: 'Emisison de documentos',
-    documentos: 'Permite solicitar un doumento'
+    apellido: 'Emisison de documentos'
   }
 
   ];

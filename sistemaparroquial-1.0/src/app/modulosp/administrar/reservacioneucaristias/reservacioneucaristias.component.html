@@ -1,1 +1,126 @@
-<p>Administrador Reservacion de eucaristias</p>
+
+<div class="card">
+    <h2>Administracion Reservacion de Eucaristias </h2><hr>
+    <br>
+    <h5>Usuarios Registrados</h5><hr>
+    
+    <p-table #dt1 [value]="documentospersonas" dataKey="tipo_eucaristia"
+        [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" styleClass="p-datatable-customers p-datatable-gridlines"
+        [paginator]="true" currentPageReportTemplate="lista de personas con documentos"
+        [globalFilterFields]="['id','nombre','otros','descripcion_nombre','tipo_eucaristia','calendario','fecha_registro','valor_fijo','estado']">
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex">
+                <span class="p-input-icon-left p-ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Buscar" />
+                </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Codigo de identificacion 
+                      
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Nombre
+                       
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Otros Participantes 
+                        
+                    </div>
+                </th>
+                
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Descripcion
+                        
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Tipo de eucaristia
+                        
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Fecha de misa
+                        
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Fecha de registro
+                        
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Valor fijo
+                        
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Estado
+                        
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Revision 
+                        
+                    </div>
+                </th>
+
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-documentosp>
+            <tr>
+                <td>
+                    {{documentosp.id}}
+                </td>
+                <td>
+                   {{documentosp.nombre}}
+                </td>
+                <td>
+                   {{documentosp.otros}}
+                </td>
+                <td>
+                    {{documentosp.descripcion_nombre}}
+                </td>
+                <td>
+                   {{documentosp.tipo_eucaristia}}
+                </td>
+                <td>
+                   {{documentosp.calendario}}
+                </td>
+                <td>
+                    {{documentosp.fecha_registro}}
+                 </td>
+                 <td>
+                    {{documentosp.valor_fijo}}
+                 </td>
+                 <td>
+                    {{documentosp.estado}}
+                 </td>
+                <td>
+                    <button pButton label="Revisar" class="p-button-outlined" icon="pi pi-filter-slash"></button>
+               
+                </td>       
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="7">No registros</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
