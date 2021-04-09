@@ -1,10 +1,11 @@
-
 <div class="card">
-    <button pButton type="button" (click)="showDialog()" label="Generar" class="ui-button-raised ui-button-success"></button>
-    
-    </div>
-    <div class="card">
-        <p-table [value]="documentos">
+    <h2>Agregar Tipos de Documentos</h2>
+    <hr>
+    <button pButton type="button" (click)="showDialog()" label="Generar"
+        class="ui-button-raised ui-button-success"></button>
+    <br>
+    <br>
+    <p-table [value]="documentos">
         <ng-template pTemplate="header">
             <tr>
                 <th>id</th>
@@ -19,49 +20,61 @@
         <ng-template pTemplate="body" let-documento>
             <tr>
                 <td>{{documento.id}}</td>
-            <td>{{documento.nombre}}</td>
-            <td>{{documento.libro}}</td>
-            <td>{{documento.referencia}}</td>
-            <td>{{documento.valor}}</td>
-                <td>  <button pButton type="button" label="Editar" ></button></td>
-                <td>  <button pButton type="button" label="Eliminar" class="p-button-warning"></button></td>
+                <td>{{documento.nombre}}</td>
+                <td>{{documento.libro}}</td>
+                <td>{{documento.referencia}}</td>
+                <td>{{documento.valor}}</td>
+                <td> <button pButton type="button" label="Editar"></button></td>
+                <td> <button pButton type="button" label="Eliminar" class="p-button-warning"></button></td>
             </tr>
-         
         </ng-template>
     </p-table>
-    <p-dialog header="Creacion de documentos" [(visible)]="dis" [modal]="true" [style]="{width: '30vw'}" [maximizable]="true" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <p-dialog header="Creacion de documentos" [(visible)]="dis" [modal]="true" [style]="{width: '30vw'}"
+        [maximizable]="true" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
         <form [formGroup]="addForm2">
-            <label for="input">Nombre Documento</label><br>
-            <div>
-                <div class="ui-inputgroup">
-                    
-                    <p-dropdown id="tipe_nomdoc" name="tipe_nomdoc" formControlName="tipe_nomdoc"  [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel=""></p-dropdown>        
+            <div class="ui-g ui-fluid">
+                <div class="ui-g form-group ">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="input">Tipo Servicio</label><br>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+
+                        <p-dropdown id="tipe_nomdoc" name="tipe_nomdoc" formControlName="tipe_nomdoc"
+                            [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel=""></p-dropdown>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="input">Nombre Documento</label><br>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+
+                        <input type="text" pInputText placeholder="Nombre">
+                        <span class="p-inputgroup-addon"></span>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="input">Descripcion</label><br>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+
+                        <textarea id="tipe_descripcion" name="tipe_descripcion" formControlName="tipe_descripcion"
+                            type="text" rows="4" pInputTextarea placeholder="Descripcion"></textarea>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="input">Valor</label><br>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                        <input id="tipe_valor" name="tipe_valor" tipe_valor="tipe_valor" type="number" pInputText
+                            placeholder="Valor">
+                    </div>
+                    <div class="ui-g-12">
+                        <button type="button" pButton label="Guardar"></button>
+                    </div>
+
                 </div>
             </div>
-            <br><br>
-            <label for="input">Descripcion</label><br>
-            <div>
-                <div class="ui-inputgroup">
-                    
-                    <textarea id="tipe_descripcion" name="tipe_descripcion" formControlName="tipe_descripcion"  type="text" rows="4" pInputTextarea placeholder="Descripcion"></textarea>          </div>
-            </div>
-            <br><br>
-            <label for="input">Valor</label><br>
-            <div>
-                <div class="ui-inputgroup">
-                    <input id="tipe_valor" name="tipe_valor" tipe_valor="tipe_valor" type="number" pInputText placeholder="Valor">  
-                  </div>
-            </div>
-            <br><br>
-            <div >
-                <button type="button" pButton label="Guardar"></button>
-            </div>
-            <br><br>
         </form>
         <p-footer>
-            <button type="button" pButton icon="pi pi-times" (click)="dis=false" label="Cancelar" class="ui-button-secondary"></button>
+            <button type="button" pButton icon="pi pi-times" (click)="dis=false" label="Cancelar"
+                class="ui-button-secondary"></button>
         </p-footer>
     </p-dialog>
-    </div>
-    
-
+</div>

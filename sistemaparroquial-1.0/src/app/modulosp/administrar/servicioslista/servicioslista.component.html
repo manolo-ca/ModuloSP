@@ -1,59 +1,72 @@
-
-
 <div class="card card-w-title">
-    <h2>Bienvenidos al centro de administracion de Servicios</h2><hr>
+    <h2>Bienvenidos al centro de administracion de Servicios</h2>
+    <hr>
     <div>
-        <button pButton type="button" (click)="showDialog()" label="Agregar" class="ui-button-raised ui-button-success"></button>
-    <br>
+        <button pButton type="button" (click)="showDialog()" label="Agregar"
+            class="ui-button-raised ui-button-success"></button>
+
     </div>
+    <br>
     <p-table [value]="servicios">
-    <ng-template pTemplate="header">
-        <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-servicio>
-        <tr>
-            <td>{{servicio.id}}</td>
-            <td>{{servicio.nombre}}</td>
-            <td>{{servicio.descripcion}}</td>
-            <td>  <button pButton type="button" label="Editar"></button></td>
-            <td>  <button pButton type="button" label="Eliminar" class="p-button-warning"></button></td>
-        </tr>
-     
-    </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-servicio>
+            <tr>
+                <td>{{servicio.id}}</td>
+                <td>{{servicio.nombre}}</td>
+                <td>{{servicio.descripcion}}</td>
+                <td> <button pButton type="button" label="Editar"></button></td>
+                <td> <button pButton type="button" label="Eliminar" class="p-button-warning"></button></td>
+            </tr>
+
+        </ng-template>
     </p-table>
-    <p-dialog header="Ingresar nuevo tipo de Eucarístia" [(visible)]="dis" [modal]="true" [style]="{width: '30vw'}" [maximizable]="true" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <p-dialog header="Ingresar nuevo tipo de Eucarístia" [(visible)]="dis" [modal]="true" [style]="{width: '30vw'}"
+        [maximizable]="true" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
         <form [formGroup]="addForm2">
-            <label for="input">Sevicio Pastoral</label><br>
-            <div>
-                <div class="ui-inputgroup">
-                    
-                    <p-dropdown id="tipe_serviciop" name="tipe_serviciop" formControlName="tipe_serviciop"  [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel=""></p-dropdown>        
+
+            <div class="ui-g ui-fluid">
+                <div class="ui-g form-group ">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="input">Sevicio Pastoral</label>
+                    </div>
+
+                    <div class="ui-g-12 ui-md-8">
+                        <input pInputText class="input name" type="text" formControlName="tipe_serviciop"
+                        name="tipe_serviciop" id="tipe_serviciop">
+                    </div>
+
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="input">Descripcion</label><br>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+
+                        <textarea id="tipe_descripcion" name="tipe_descripcion" formControlName="tipe_descripcion"
+                            type="text" rows="4" pInputTextarea placeholder="Descripcion"></textarea>
+                    </div>
+
+
+                    <div class="ui-g-12">
+                        <button type="button" pButton label="Guardar"></button>
+                    </div>
+                    <br><br>
+
                 </div>
             </div>
-            <br><br>
-            <label for="input">Descripcion</label><br>
-            <div>
-                <div class="ui-inputgroup">
-                    
-                    <textarea id="tipe_descripcion" name="tipe_descripcion" formControlName="tipe_descripcion"  type="text" rows="4" pInputTextarea placeholder="Descripcion"></textarea>          </div>
-            </div>
-            <br><br>
-            <div >
-                <button type="button" pButton label="Guardar"></button>
-            </div>
-            <br><br>
+
+
+
         </form>
         <p-footer>
-            <button type="button" pButton icon="pi pi-times" (click)="dis=false" label="Cancelar" class="ui-button-secondary"></button>
+            <button type="button" pButton icon="pi pi-times" (click)="dis=false" label="Cancelar"
+                class="ui-button-secondary"></button>
         </p-footer>
     </p-dialog>
 </div>
-
-
-

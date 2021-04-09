@@ -40,7 +40,7 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Servicios Pastorales', icon: 'fa fa-fw fa-gg',
                 items: [
-                    {label: 'Registrarse',icon: 'fa fa-fw fa-code', routerLink:'#'},
+                    {label: 'Registrarse',icon: 'fa fa-fw fa-code', routerLink:''},
                     {label: 'Administrar',icon: 'fa fa-fw fa-code',
                     items: [
                         
@@ -54,7 +54,7 @@ export class AppMenuComponent implements OnInit {
                         {label: 'Administrar Reservacion eucaristias', icon: 'fa fa-fw fa-minus-square-o',routerLink:'modulosp/administrar/reservacioneucaristias'}
                     ]
                     },
-                    {label: 'Servicios', icon: 'fa fa-fw fa-code',routerLink:'#',
+                    {label: 'Servicios', icon: 'fa fa-fw fa-code',routerLink:'',
                     items: [
                         
                         {label: 'Emision de Documentos',icon: 'fa fa-fw fa-minus-square-o', routerLink:'modulosp/usuario/emisiondocumentosusuario'},

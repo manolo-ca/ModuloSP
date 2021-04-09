@@ -1,21 +1,20 @@
-
-
 <div class="card card-w-title">
     <h1>Tipo de Eucaristías</h1>
     <div class="card">
         <div>
-            <button pButton type="button" (click)="showDialog()" label="Agregar" class="ui-button-raised ui-button-success"></button>
+            <button pButton type="button" (click)="showDialog()" label="Agregar"
+                class="ui-button-raised ui-button-success"></button>
         </div>
-
     </div>
     <p-table #tt [value]="files" [columns]="cols">
         <ng-template pTemplate="caption">
             <div class="p-grid">
-                
+
                 <div>
                     <i></i>
-                    <input type="text" pInputText size="50" placeholder="Tipos de Eucaristías" (input)="tt.filterGlobal($event.target.value, 'contains')" style="width:auto">
-    
+                    <input type="text" pInputText size="50" placeholder="Tipos de Eucaristías"
+                        (input)="tt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+
                 </div>
             </div>
         </ng-template>
@@ -33,7 +32,8 @@
                 <td>Privada</td>
                 <td>Se realiza por tal motivo. EJEMPLO</td>
                 <td><button pButton type="button" label="Editar" class="ui-button-raised"></button></td>
-                <td><button pButton type="button" label="Eliminar" class="ui-button-raised ui-button-danger"></button></td>
+                <td><button pButton type="button" label="Eliminar" class="ui-button-raised ui-button-danger"></button>
+                </td>
             </tr>
             <tr>
                 <td>001</td>
@@ -41,55 +41,58 @@
                 <td>Privada</td>
                 <td>Se realiza por tal motivo. EJEMPLO</td>
                 <td><button pButton type="button" label="Editar" class="ui-button-raised"></button></td>
-                <td><button pButton type="button" label="Eliminar" class="ui-button-raised ui-button-danger"></button></td>
+                <td><button pButton type="button" label="Eliminar" class="ui-button-raised ui-button-danger"></button>
+                </td>
             </tr>
         </ng-template>
         <ng-template pTemplate="emptymessage">
-            <tr>        
+            <tr>
                 <td [attr.colspan]="cols.length">No data found.</td>
             </tr>
         </ng-template>
-
-
     </p-table>
-
-   
-        
-        <p-dialog header="Ingresar nuevo tipo de Eucarístia" [(visible)]="dis" [modal]="true" [style]="{width: '30vw'}" [maximizable]="true" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <p-dialog header="Ingresar nuevo tipo de Eucarístia" [(visible)]="dis" [modal]="true" [style]="{width: '30vw'}"
+        [maximizable]="true" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
         <form [formGroup]="addForm1">
-            <div>
-                <label for="input">Nombre de la eucaristia:</label><br>
-                <div class="ui-inputgroup">
 
-                  <input  class="input name" type="text" formControlName="tipe_nombre" name="tipe_nombre" id="tipe_nombre">
-                    <div *ngIf="submitted && !!f.tipe_nombre.errors" class="invalid-feedback">
-                        <div *ngIf="!!f.tipe_nombre.errors.required">Campo requerido</div>
+            <div class="ui-g ui-fluid">
+                <div class="ui-g form-group ">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="input">Tipo de Servicio:</label><br>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+
+                        <p-dropdown id="tipe_servicio" placeholder="TIPO DE SERVICIO" name="tipe_servicio" formControlName="tipe_servicio"
+                            [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel=""></p-dropdown>
+                    </div>
+                    
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="input">Nombre de la eucaristia:</label><br>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+
+                        <input pInputText class="input name" type="text" formControlName="tipe_nombre"
+                            name="tipe_nombre" id="tipe_nombre">
+                        <div *ngIf="submitted && !!f.tipe_nombre.errors" class="invalid-feedback">
+                            <div *ngIf="!!f.tipe_nombre.errors.required">Campo requerido</div>
+                        </div>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="input">Tipo de Eucaristía:</label><br>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                        <p-dropdown id="inse_otros" placeholder="PRIVADA" name="tipe_tipo" formControlName="tipe_tipo"
+                            [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel="#"></p-dropdown>
+                    </div>
+                    <div class="ui-g-12 ">
+                        <button type="button" pButton label="Guardar"></button>
                     </div>
                 </div>
-            </div><br><br>
-            <label for="input">Tipo de Eucaristía:</label><br>
-            <div>
-                <div class="ui-inputgroup">
-                   
-                    <p-dropdown id="inse_otros" name="tipe_tipo" formControlName="tipe_tipo"  [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel="#"></p-dropdown>
-                </div>
-            </div><br><br>
-            <label for="input">Tipo de Servicio:</label><br>
-            <div>
-                <div class="ui-inputgroup">
-                    
-                    <p-dropdown id="tipe_servicio" name="tipe_servicio" formControlName="tipe_servicio"  [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel=""></p-dropdown>        
-                </div>
             </div>
-            <br><br>
-            <div >
-                <button type="button" pButton label="Guardar"></button>
-            </div>
-            <br><br>
         </form>
         <p-footer>
-            <button type="button" pButton icon="pi pi-times" (click)="dis=false" label="Cancelar" class="ui-button-secondary"></button>
+            <button type="button" pButton icon="pi pi-times" (click)="dis=false" label="Cancelar"
+                class="ui-button-secondary"></button>
         </p-footer>
     </p-dialog>
-   
 </div>
