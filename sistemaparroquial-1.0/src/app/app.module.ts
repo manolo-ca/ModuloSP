@@ -114,6 +114,8 @@ import { DocumentopersonasComponent } from './modulosp/administrar/documentopers
 import { ReservacioneucaristiasComponent } from './modulosp/administrar/reservacioneucaristias/reservacioneucaristias.component';
 import { InscripcioneucaristiasComponent } from './modulosp/administrar/inscripcioneucaristias/inscripcioneucaristias.component';
 import { DocumentopersonascrearComponent } from './modulosp/administrar/documentopersonascrear/documentopersonascrear.component';
+import { TipoeucaristiasComponent } from './modulosp/administrar/tipoeucaristias/tipoeucaristias.component';
+import { InscripcioneucaristiasusuarioComponent } from './modulosp/usuario/inscripcioneucaristiasusuario/inscripcioneucaristiasusuario.component';
 
 const routes: Routes=[
   {path:'',redirectTo:'', pathMatch:'full'},
@@ -123,6 +125,7 @@ const routes: Routes=[
   {path:'modulosp/administrar/tiposdocumentoscrear',component:TiposdocumentoscrearComponent},
   {path:'modulosp/administrar/documentopersonas',component:DocumentopersonasComponent},
   {path:'modulosp/administrar/documentopersonascrear',component:DocumentopersonascrearComponent},
+  {path:'modulosp/administrar/tipoeucaristias',component:TipoeucaristiasComponent},
   {path:'modulosp/administrar/emiciondocumentos',component:EmiciondocumentosComponent},
   {path:'modulosp/administrar/inscripcioneucaristias',component:InscripcioneucaristiasComponent},
   {path:'modulosp/administrar/reservacioneucaristias',component:ReservacioneucaristiasComponent},
@@ -130,8 +133,8 @@ const routes: Routes=[
 
   
   {path:'modulosp/usuario/emisiondocumentosusuario',component:EmisiondocumentosusuarioComponent},
-  {path:'modulosp/usuario/reservacioneucaristiasusuario',component:ReservacioneucaristiasusuarioComponent}
-
+  {path:'modulosp/usuario/reservacioneucaristiasusuario',component:ReservacioneucaristiasusuarioComponent},
+  {path:'modulosp/usuario/inscripcioneucaristiasusuario',component:InscripcioneucaristiasusuarioComponent}
   
 ];
 @NgModule({
@@ -167,7 +170,9 @@ const routes: Routes=[
     ReservacioneucaristiasComponent,
     DocumentopersonasComponent,
     InscripcioneucaristiasComponent,
-    DocumentopersonascrearComponent
+    DocumentopersonascrearComponent,
+    TipoeucaristiasComponent,
+    InscripcioneucaristiasusuarioComponent
   ],
 
   

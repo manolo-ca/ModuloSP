@@ -49,7 +49,7 @@ export class AppMenuComponent implements OnInit {
                         {label: 'Administrar Documentos persona', icon: 'fa fa-fw fa-minus-square-o',routerLink:'modulosp/administrar/documentopersonas'},
                         {label: 'Administrar Solicitudes de documentos', icon: 'fa fa-fw fa-minus-square-o',routerLink:'modulosp/administrar/emiciondocumentos'},
                        
-                        {label: 'Administrar tipo de eucaristias', icon: 'fa fa-fw fa-minus-square-o',routerLink:'#'},
+                        {label: 'Administrar tipo de eucaristias', icon: 'fa fa-fw fa-minus-square-o',routerLink:'modulosp/administrar/tipoeucaristias'},
                         {label: 'Administrar Inscricion a eucaristias', icon: 'fa fa-fw fa-minus-square-o',routerLink:'modulosp/administrar/inscripcioneucaristias'},
                         {label: 'Administrar Reservacion eucaristias', icon: 'fa fa-fw fa-minus-square-o',routerLink:'modulosp/administrar/reservacioneucaristias'}
                     ]
@@ -59,7 +59,7 @@ export class AppMenuComponent implements OnInit {
                         
                         {label: 'Emision de Documentos',icon: 'fa fa-fw fa-minus-square-o', routerLink:'modulosp/usuario/emisiondocumentosusuario'},
                         {label: 'Reservacion a Eucaristias', icon: 'fa fa-fw fa-minus-square-o',routerLink:'modulosp/usuario/reservacioneucaristiasusuario'},
-                        {label: 'Inscripcion a Eucaristias', icon: 'fa fa-fw fa-minus-square-o',routerLink:'#'}
+                        {label: 'Inscripcion a Eucaristias', icon: 'fa fa-fw fa-minus-square-o',routerLink:'modulosp/usuario/inscripcioneucaristiasusuario'}
                     ]
                 },
                 ]

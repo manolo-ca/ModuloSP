@@ -1,0 +1,77 @@
+<div class="ui-g ui-fluid">
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="card card-w-title">
+            <h1 style="font-size: 20px; font-weight: bold;">Inscripción de Eucaristías:</h1>
+            <div class="ui-g form-group">
+                <div class="ui-g-12 ui-md-2">
+                    <label for="input">Código de Inscripción:</label>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <input name="inse_id" id="inse_id" formControlName="inse_id" type="text" pInputText placeholder="Código nuevo" class="form-control">
+                    <div *ngIf="submitted && !!f.inse_id.errors" class="invalid-feedback">
+                        <div *ngIf="!!f.inse_id.errors.required">Campo requerido</div>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-2">
+                    <label for="input">Fecha de Resgistro:</label>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <p-calendar formControlName="inse_fecharegistro" name="inse_fecharegistro" id="inse_fecharegistro" [(ngModel)]="fec2" [showIcon]="true" class="form-control" placeholder="AAAA/MM/DD"></p-calendar>
+                    <div *ngIf="submitted && !!f.inse_fecharegistro.errors" class="invalid-feedback">
+                        <div *ngIf="!!f.inse_fecharegistro.errors.required">Campo requerido</div>
+                    </div>
+                </div>
+                <div class="ui-g-12">
+                    <label for="input">Descripción de la Eucaristía:</label>
+                    <br><br>
+                    <textarea maxlength="5000" formControlName="inse_descripcionnombre" name="inse_descripcionnombre" id="inse_descripcionnombre" [rows]="4" [cols]="100" placeholder="Descripción sobre el registro de la Eucaristía." pInputTextarea autoResize="autoResize" class="form-control"></textarea>
+                    <div *ngIf="submitted && !!f.inse_descripcionnombre.errors" class="invalid-feedback">
+                        <div *ngIf="!!f.inse_descripcionnombre.errors.required">Campo requerido</div>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-2">
+                    <label for="textarea">Persona Solicitante:</label>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <input maxlength="250" formControlName="inse_persona" name="inse_persona" id="inse_persona" type="text" pInputText placeholder="Ingrese nombres y apellidos">
+                    <div *ngIf="submitted && !!f.inse_persona.errors" class="invalid-feedback">
+                        <div *ngIf="!!f.inse_persona.errors.required">Campo requerido</div>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-2">
+                    <label for="input">Donación Voluntaria:</label>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <input maxlength="250" formControlName="inse_valorvoluntario" name="inse_valorvoluntario" id="inse_valorvoluntario" type="text" pInputText placeholder="Cantidad de la Donación voluntaria" class="form-control">
+                    <div *ngIf="submitted && !!f.inse_valorvoluntario.errors" class="invalid-feedback">
+                        <div *ngIf="!!f.inse_valorvoluntario.errors.required">Campo requerido</div>
+                    </div>
+                </div>
+                <div class="ui-g-12">
+                    <div class="card card-w-title">
+                        <h1>Calendario de la Parroquia San Joaquín</h1>
+                        <p-fullCalendar [events]="events" [options]="fullcalendarOptions" ></p-fullCalendar>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-2">
+                    <label for="input">Tipo de Eucaristía:</label>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <p-dropdown id="inse_tiposeucaristias" name="inse_tiposeucaristias" formControlName="inse_tiposeucaristias"  [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel="aula_nombre"></p-dropdown>
+                </div>
+                <div class="ui-g-12 ui-md-2">
+                    <label for="input">Estado:</label>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <p-dropdown id="inse_otros" name="inse_otros" formControlName="inse_otros"  [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel="aula_nombre"></p-dropdown>
+                </div>
+                <br>
+                <br>             
+                <div class="ui-g-12">
+                    <button pButton style="width: 220px;" type="button" label="Registrar Inscripción" style="margin-bottom:10px"></button>
+                </div>
+                <br>
+            </div>
+        </div>
+    </form>
+</div>
