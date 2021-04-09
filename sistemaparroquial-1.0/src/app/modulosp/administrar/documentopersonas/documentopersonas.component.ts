@@ -8,25 +8,25 @@ import { Documentopersonasejemplo } from './documentopersonasejemplo';
 export class DocumentopersonasComponent implements OnInit {
   documentospersonas:Documentopersonasejemplo[]=[
     {
-      id:1,
-      nombre: 'Emisison de documentos',
-      apellido: 'Emisison de documentos'
+      id:1234,
+      nombre: 'Juliano Seven',
+      apellido: ' Lindo Parado'
       
   },
   {
-    id:2,
-    nombre: 'Emisison de documentos',
-    apellido: 'Emisison de documentos'
+    id:4321,
+    nombre: 'Jose ',
+    apellido: 'Perez'
   },
   {
-    id:3,
-    nombre: 'Emisison de documentos',
-    apellido: 'Emisison de documentos'
+    id:5673,
+    nombre: 'Daniela ',
+    apellido: 'Cordova'
   },
   {
-    id:4,
-    nombre: 'Emisison de documentos',
-    apellido: 'Emisison de documentos'
+    id:2345,
+    nombre: 'Guadalupe',
+    apellido: 'Señor'
   }
 
   ];

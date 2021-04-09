@@ -42,7 +42,7 @@
               "node_modules/@fullcalendar/daygrid/main.min.css",
               "node_modules/@fullcalendar/timegrid/main.min.css",
               "node_modules/quill/dist/quill.snow.css",
-              "src/styles.css",
+              "src/styles.css"
           
 
             ],

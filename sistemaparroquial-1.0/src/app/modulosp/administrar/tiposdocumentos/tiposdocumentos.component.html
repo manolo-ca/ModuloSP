@@ -1,7 +1,7 @@
 
 <div class="card">
-    <button pButton type="button" label="Crear" class="p-button-warning"
-     [routerLink]="['/modulosp/administrar/tiposdocumentoscrear']"></button>
+    <button pButton type="button" (click)="showDialog()" label="Generar" class="ui-button-raised ui-button-success"></button>
+    
     </div>
     <div class="card">
         <p-table [value]="documentos">
@@ -29,6 +29,39 @@
          
         </ng-template>
     </p-table>
+    <p-dialog header="Creacion de documentos" [(visible)]="dis" [modal]="true" [style]="{width: '30vw'}" [maximizable]="true" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+        <form [formGroup]="addForm2">
+            <label for="input">Nombre Documento</label><br>
+            <div>
+                <div class="ui-inputgroup">
+                    
+                    <p-dropdown id="tipe_nomdoc" name="tipe_nomdoc" formControlName="tipe_nomdoc"  [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel=""></p-dropdown>        
+                </div>
+            </div>
+            <br><br>
+            <label for="input">Descripcion</label><br>
+            <div>
+                <div class="ui-inputgroup">
+                    
+                    <textarea id="tipe_descripcion" name="tipe_descripcion" formControlName="tipe_descripcion"  type="text" rows="4" pInputTextarea placeholder="Descripcion"></textarea>          </div>
+            </div>
+            <br><br>
+            <label for="input">Valor</label><br>
+            <div>
+                <div class="ui-inputgroup">
+                    <input id="tipe_valor" name="tipe_valor" tipe_valor="tipe_valor" type="number" pInputText placeholder="Valor">  
+                  </div>
+            </div>
+            <br><br>
+            <div >
+                <button type="button" pButton label="Guardar"></button>
+            </div>
+            <br><br>
+        </form>
+        <p-footer>
+            <button type="button" pButton icon="pi pi-times" (click)="dis=false" label="Cancelar" class="ui-button-secondary"></button>
+        </p-footer>
+    </p-dialog>
     </div>
     
 

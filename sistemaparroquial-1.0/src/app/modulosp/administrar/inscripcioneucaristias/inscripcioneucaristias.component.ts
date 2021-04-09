@@ -1,10 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import {Inscripcioneucaristiasejemplo} from './inscripcioneucaristiasejemplo';
+import { TreeNode } from 'primeng/primeng';
+import { NodeService } from 'src/app/demo/service/nodeservice';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-inscripcioneucaristias',
   templateUrl: './inscripcioneucaristias.component.html'
 })
 export class InscripcioneucaristiasComponent implements OnInit {
+  files: TreeNode[];
+  addForm2: FormGroup;
+  dis: boolean;
+  submitted1 = false;
+  cols: any[];
+  inscripciones: any[];
+  tipo = {};
+
+  showDialog() {
+    this.dis = true;
+  }
+  constructor(private nodeService: NodeService,private router: Router, private formBuilder: FormBuilder) { }
+
   documentospersonas:Inscripcioneucaristiasejemplo[]=[
     {
     id:1,
@@ -14,7 +31,8 @@ export class InscripcioneucaristiasComponent implements OnInit {
     tipo_eucaristia:'intencion',
     calendario:'01/02/2021',
     fecha_registro:'08/04/2021',
-    valor_voluntario:1
+    valor_voluntario:1,
+    estado:'pendiente'
       
   },
   {
@@ -25,13 +43,21 @@ export class InscripcioneucaristiasComponent implements OnInit {
     tipo_eucaristia:'muertos',
     calendario:'01/02/2021',
     fecha_registro:'08/04/2021',
-    valor_voluntario:1
+    valor_voluntario:1,
+    estado:'pendiente'
   }
  
   ]
-  constructor() { }
+ 
 
   ngOnInit() {
+    this.nodeService.getFilesystem().then(files => this.files = files);
+    this.addForm2 = this.formBuilder.group({
+      tipe_descripcion: ['', Validators.required],
+      tipe_nom: ['', Validators.required],
+      tipe_doc: ['', Validators.required],
+      tipe_estado: ['', Validators.required]
+    });
   }
 
 }

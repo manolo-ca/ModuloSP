@@ -104,9 +104,7 @@ import { LoginService } from './login/login.service';
 import { LoginComponent} from './login/login.component';
 import { ServicioslistaComponent } from './modulosp/administrar/servicioslista/servicioslista.component';
 import { RouterModule, Routes } from '@angular/router';
-import { ServicioslistacrearComponent } from './modulosp/administrar/servicioslistacrear/servicioslistacrear.component';
 import { TiposdocumentosComponent } from './modulosp/administrar/tiposdocumentos/tiposdocumentos.component';
-import { TiposdocumentoscrearComponent } from './modulosp/administrar/tiposdocumentoscrear/tiposdocumentoscrear.component';
 import { EmiciondocumentosComponent } from './modulosp/administrar/emiciondocumentos/emiciondocumentos.component';
 import { EmisiondocumentosusuarioComponent } from './modulosp/usuario/emisiondocumentosusuario/emisiondocumentosusuario.component';
 import { ReservacioneucaristiasusuarioComponent } from './modulosp/usuario/reservacioneucaristiasusuario/reservacioneucaristiasusuario.component';
@@ -121,9 +119,9 @@ import { InscripcioneucaristiasusuarioComponent } from './modulosp/usuario/inscr
 const routes: Routes=[
   {path:'',redirectTo:'', pathMatch:'full'},
   {path:'modulosp/administrar/servicioslista',component:ServicioslistaComponent},
-  {path:'modulosp/administrar/servicioslistacrear',component:ServicioslistacrearComponent},
+
   {path:'modulosp/administrar/tiposdocumentos',component:TiposdocumentosComponent},
-  {path:'modulosp/administrar/tiposdocumentoscrear',component:TiposdocumentoscrearComponent},
+ 
   {path:'modulosp/administrar/documentopersonas',component:DocumentopersonasComponent},
   {path:'modulosp/administrar/documentopersonascrear',component:DocumentopersonascrearComponent},
   {path:'modulosp/administrar/tipoeucaristias',component:TipoeucaristiasComponent},
@@ -162,9 +160,8 @@ const routes: Routes=[
     UtilsDemoComponent,
     DocumentationComponent,
     ServicioslistaComponent,
-    ServicioslistacrearComponent,
     TiposdocumentosComponent,
-    TiposdocumentoscrearComponent,
+    
     EmiciondocumentosComponent,
     EmisiondocumentosusuarioComponent,
     ReservacioneucaristiasusuarioComponent,

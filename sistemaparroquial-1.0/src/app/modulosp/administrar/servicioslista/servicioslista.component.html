@@ -4,6 +4,7 @@
     <h2>Bienvenidos al centro de administracion de Servicios</h2><hr>
     <div>
         <button pButton type="button" (click)="showDialog()" label="Agregar" class="ui-button-raised ui-button-success"></button>
+    <br>
     </div>
     <p-table [value]="servicios">
     <ng-template pTemplate="header">
@@ -20,7 +21,7 @@
             <td>{{servicio.id}}</td>
             <td>{{servicio.nombre}}</td>
             <td>{{servicio.descripcion}}</td>
-            <td>  <button pButton type="button" label="Editar" ></button></td>
+            <td>  <button pButton type="button" label="Editar"></button></td>
             <td>  <button pButton type="button" label="Eliminar" class="p-button-warning"></button></td>
         </tr>
      

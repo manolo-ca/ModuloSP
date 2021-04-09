@@ -70,7 +70,7 @@
                 </th>
                 <th>
                     <div class="p-d-flex p-jc-between p-ai-center">
-                        estado
+                        Estado
                         
                     </div>
                 </th>
@@ -113,8 +113,8 @@
                     {{documentosp.estado}}
                  </td>
                 <td>
-                    <button pButton label="Aprovar" class="p-button-outlined" icon="pi pi-filter-slash"></button>
-               
+                    <button pButton type="button" (click)="showDialog()" label="Aprovar" class="ui-button-raised ui-button-success"></button>
+   
                 </td>       
             </tr>
         </ng-template>
@@ -124,4 +124,39 @@
             </tr>
         </ng-template>
     </p-table>
+
+    <p-dialog header="Creacion de documentos" [(visible)]="dis" [modal]="true" [style]="{width: '30vw'}" [maximizable]="true" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+        <form [formGroup]="addForm2">
+            <br>
+            <label for="input">Nombre</label><br>
+            <div>
+                <div class="ui-inputgroup">
+                    <input type="text" id="tipe_nom" name="tipe_nom" formControlName="tipe_nom" pInputText disabled> 
+             </div>
+            </div>
+            <br>
+            <label for="input">Tipo de documento</label><br>
+            <div>
+                <div class="ui-inputgroup">
+                    <input type="text" id="tipe_doc" name="tipe_doc" formControlName="tipe_doc" pInputText disabled> 
+            
+                </div>
+            </div>
+            <br>
+            <label for="input">Estado</label><br>
+            <div>
+                <div class="ui-inputgroup">
+                    <p-dropdown id="tipe_estado" name="tipe_estado" formControlName="tipe_estado"  [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel=""></p-dropdown>        
+             </div>
+            </div>
+            <br>
+            <div >
+                <button type="button" pButton label="Actualizar"></button>
+            </div>
+            <br>
+        </form>
+        <p-footer>
+            <button type="button" pButton icon="pi pi-times" (click)="dis=false" label="Cancelar" class="ui-button-secondary"></button>
+        </p-footer>
+    </p-dialog>
 </div>

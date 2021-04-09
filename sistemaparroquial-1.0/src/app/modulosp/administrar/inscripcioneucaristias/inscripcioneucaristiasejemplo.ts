@@ -6,5 +6,7 @@ export class Inscripcioneucaristiasejemplo {
     tipo_eucaristia:string;
     calendario:string;
     fecha_registro:string;
-    valor_voluntario:number;  
+    valor_voluntario:number;
+    estado:string;
+
 }
