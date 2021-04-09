@@ -1,10 +1,10 @@
 
-<div class="card">
+
+<div class="card card-w-title">
     <h2>Bienvenidos al centro de administracion de Servicios</h2><hr>
-<button pButton type="button" label="Crear" class="p-button-warning"
- [routerLink]="['/modulosp/administrar/servicioslistacrear']"></button>
-</div>
-<div class="card">
+    <div>
+        <button pButton type="button" (click)="showDialog()" label="Agregar" class="ui-button-raised ui-button-success"></button>
+    </div>
     <p-table [value]="servicios">
     <ng-template pTemplate="header">
         <tr>
@@ -25,7 +25,33 @@
         </tr>
      
     </ng-template>
-</p-table>
+    </p-table>
+    <p-dialog header="Ingresar nuevo tipo de Eucarístia" [(visible)]="dis" [modal]="true" [style]="{width: '30vw'}" [maximizable]="true" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+        <form [formGroup]="addForm2">
+            <label for="input">Sevicio Pastoral</label><br>
+            <div>
+                <div class="ui-inputgroup">
+                    
+                    <p-dropdown id="tipe_serviciop" name="tipe_serviciop" formControlName="tipe_serviciop"  [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel=""></p-dropdown>        
+                </div>
+            </div>
+            <br><br>
+            <label for="input">Descripcion</label><br>
+            <div>
+                <div class="ui-inputgroup">
+                    
+                    <textarea id="tipe_descripcion" name="tipe_descripcion" formControlName="tipe_descripcion"  type="text" rows="4" pInputTextarea placeholder="Descripcion"></textarea>          </div>
+            </div>
+            <br><br>
+            <div >
+                <button type="button" pButton label="Guardar"></button>
+            </div>
+            <br><br>
+        </form>
+        <p-footer>
+            <button type="button" pButton icon="pi pi-times" (click)="dis=false" label="Cancelar" class="ui-button-secondary"></button>
+        </p-footer>
+    </p-dialog>
 </div>
 
 

@@ -117,6 +117,7 @@ import { DocumentopersonascrearComponent } from './modulosp/administrar/document
 import { TipoeucaristiasComponent } from './modulosp/administrar/tipoeucaristias/tipoeucaristias.component';
 import { InscripcioneucaristiasusuarioComponent } from './modulosp/usuario/inscripcioneucaristiasusuario/inscripcioneucaristiasusuario.component';
 
+
 const routes: Routes=[
   {path:'',redirectTo:'', pathMatch:'full'},
   {path:'modulosp/administrar/servicioslista',component:ServicioslistaComponent},
@@ -177,7 +178,6 @@ const routes: Routes=[
 
   
   imports: [
-  
     DropdownModule,
     FormsModule,
     RouterModule.forRoot(routes),
