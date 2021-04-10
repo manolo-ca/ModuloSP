@@ -114,6 +114,7 @@ import { InscripcioneucaristiasComponent } from './modulosp/administrar/inscripc
 import { DocumentopersonascrearComponent } from './modulosp/administrar/documentopersonascrear/documentopersonascrear.component';
 import { TipoeucaristiasComponent } from './modulosp/administrar/tipoeucaristias/tipoeucaristias.component';
 import { InscripcioneucaristiasusuarioComponent } from './modulosp/usuario/inscripcioneucaristiasusuario/inscripcioneucaristiasusuario.component';
+import { RegistropersonaComponent } from './modulosp/registropersona/registropersona.component';
 
 
 const routes: Routes=[
@@ -129,7 +130,7 @@ const routes: Routes=[
   {path:'modulosp/administrar/inscripcioneucaristias',component:InscripcioneucaristiasComponent},
   {path:'modulosp/administrar/reservacioneucaristias',component:ReservacioneucaristiasComponent},
 
-
+  {path:'modulosp/registropersona/registropersona',component:RegistropersonaComponent},
   
   {path:'modulosp/usuario/emisiondocumentosusuario',component:EmisiondocumentosusuarioComponent},
   {path:'modulosp/usuario/reservacioneucaristiasusuario',component:ReservacioneucaristiasusuarioComponent},
@@ -170,11 +171,13 @@ const routes: Routes=[
     InscripcioneucaristiasComponent,
     DocumentopersonascrearComponent,
     TipoeucaristiasComponent,
-    InscripcioneucaristiasusuarioComponent
+    InscripcioneucaristiasusuarioComponent,
+    RegistropersonaComponent
   ],
 
   
   imports: [
+    
     DropdownModule,
     FormsModule,
     RouterModule.forRoot(routes),

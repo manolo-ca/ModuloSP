@@ -5,11 +5,35 @@ import {SelectItem} from 'primeng/primeng';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import {Reservacioneucaristiasusuarioejemplo}from './reservacioneucaristiasusuarioejemplo';
 @Component({
   selector: 'app-reservacioneucaristiasusuario',
   templateUrl: './reservacioneucaristiasusuario.component.html'
 })
 export class ReservacioneucaristiasusuarioComponent implements OnInit {
+
+  reservacioneu:Reservacioneucaristiasusuarioejemplo[]=[
+    {
+      cedula:124,
+      nombre:'lucas',
+      apellido:'moreno',
+      fecha:'21/12/2021',
+      tipo:'bautizo',
+      descripcion:'lalalalala',
+      valor:'50'
+  },
+  {
+      cedula:124,
+      nombre:'lucas',
+      apellido:'moreno',
+      fecha:'21/12/2021',
+      tipo:'bautizo',
+      descripcion:'lalalalala',
+      valor:'50'
+    
+},
+
+  ];
   addForm: FormGroup;
   
   submitted = false;

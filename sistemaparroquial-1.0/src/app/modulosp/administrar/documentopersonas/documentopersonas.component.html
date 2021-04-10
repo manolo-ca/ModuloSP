@@ -8,7 +8,7 @@
     <p-table #dt1 [value]="documentospersonas" dataKey="id"
         [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" styleClass="p-datatable-customers p-datatable-gridlines"
         [paginator]="true" currentPageReportTemplate="lista de personas con documentos"
-        [globalFilterFields]="['id','nombre','apellido','documento']">
+        [globalFilterFields]="['id','nombre','apellido']">
         <ng-template pTemplate="caption">
             <div class="p-d-flex">
                 <span class="p-input-icon-left p-ml-auto">
@@ -59,8 +59,9 @@
                 </td>
                
                 <td>
-                    <button pButton label="Revisar Documentos" class="p-button-outlined" icon="pi pi-filter-slash" [routerLink]="['/modulosp/administrar/documentopersonascrear']"></button>
-               
+                  
+                    <p-button icon="pi pi-plus"[routerLink]="['/modulosp/administrar/documentopersonascrear']"  label="Agregar" styleClass="ui-button-success"></p-button>
+            
                 </td>       
             </tr>
         </ng-template>

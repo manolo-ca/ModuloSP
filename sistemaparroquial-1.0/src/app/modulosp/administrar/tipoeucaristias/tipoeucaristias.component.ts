@@ -3,12 +3,47 @@ import { TreeNode } from 'primeng/primeng';
 import { NodeService } from 'src/app/demo/service/nodeservice';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import{Tipoeucaristiasejemplo} from './tipoeucaristiasejemplo';
 @Component({
   selector: 'app-tipoeucaristias',
   templateUrl: './tipoeucaristias.component.html'
 })
 export class TipoeucaristiasComponent implements OnInit {
 
+  teucaristia:Tipoeucaristiasejemplo[]=[
+    {
+      codigo:1,
+      nombre:'Matrimonio',
+      tipo: 'Matrimonios',
+      descripcion: 'en la hoja x del libro de matrimonio'
+      
+  },
+  {
+    codigo:1,
+    nombre:'Matrimonio',
+    tipo: 'Matrimonios',
+    descripcion: 'en la hoja x del libro de matrimonio'
+  },
+  {
+    codigo:1,
+    nombre:'Matrimonio',
+    tipo: 'Matrimonios',
+    descripcion: 'en la hoja x del libro de matrimonio'
+  },
+  {
+    codigo:1,
+    nombre:'Matrimonio',
+    tipo: 'Matrimonios',
+    descripcion: 'en la hoja x del libro de matrimonio'
+  },
+  {
+    codigo:1,
+    nombre:'Matrimonio',
+    tipo: 'Matrimonios',
+    descripcion: 'en la hoja x del libro de matrimonio'
+  }
+
+  ]
  
   files: TreeNode[];
   addForm1: FormGroup;

@@ -2,53 +2,30 @@
     <h1>Tipo de Eucaristías</h1>
     <div class="card">
         <div>
-            <button pButton type="button" (click)="showDialog()" label="Agregar"
-                class="ui-button-raised ui-button-success"></button>
+            <p-button icon="pi pi-plus" (click)="showDialog()" label="Agregar"
+            styleClass="ui-button-success"></p-button>
         </div>
     </div>
-    <p-table #tt [value]="files" [columns]="cols">
-        <ng-template pTemplate="caption">
-            <div class="p-grid">
-
-                <div>
-                    <i></i>
-                    <input type="text" pInputText size="50" placeholder="Tipos de Eucaristías"
-                        (input)="tt.filterGlobal($event.target.value, 'contains')" style="width:auto">
-
-                </div>
-            </div>
-        </ng-template>
-        <ng-template pTemplate="header" let-columns>
+    <p-table [value]="teucaristia">
+        <ng-template pTemplate="header">
             <tr>
-                <th *ngFor="let col of cols">
-                    {{col.header}}
-                </th>
+                <th>Codigo</th>
+                <th>nombre</th>
+                <th>tipo</th>
+                <th>descripcion </th>
+                <th>Editar</th>
+                <th>Eliminar </th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <ng-template pTemplate="body" let-eucaristia>
             <tr>
-                <td>001</td>
-                <td>Eucaristía 1</td>
-                <td>Privada</td>
-                <td>Se realiza por tal motivo. EJEMPLO</td>
-                <td><button pButton type="button" label="Editar" class="ui-button-raised"></button></td>
-                <td><button pButton type="button" label="Eliminar" class="ui-button-raised ui-button-danger"></button>
-                </td>
-            </tr>
-            <tr>
-                <td>001</td>
-                <td>Eucaristía 1</td>
-                <td>Privada</td>
-                <td>Se realiza por tal motivo. EJEMPLO</td>
-                <td><button pButton type="button" label="Editar" class="ui-button-raised"></button></td>
-                <td><button pButton type="button" label="Eliminar" class="ui-button-raised ui-button-danger"></button>
-                </td>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="emptymessage">
-            <tr>
-                <td [attr.colspan]="cols.length">No data found.</td>
-            </tr>
+                <td>{{eucaristia.codigo}}</td>
+                <td>{{eucaristia.nombre}}</td>
+                <td>{{eucaristia.tipo}}</td>
+                <td>{{eucaristia.descripcion}}</td>
+        
+                <td> <p-button icon="pi pi-pencil" styleClass="ui-button-warning"  label="Editar"></p-button></td>
+                <td> <p-button icon="pi pi-trash"  styleClass="ui-button-danger"  label="Eliminar"></p-button></td> </tr>
         </ng-template>
     </p-table>
     <p-dialog header="Ingresar nuevo tipo de Eucarístia" [(visible)]="dis" [modal]="true" [style]="{width: '30vw'}"
@@ -85,14 +62,14 @@
                             [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel="#"></p-dropdown>
                     </div>
                     <div class="ui-g-12 ">
-                        <button type="button" pButton label="Guardar"></button>
+                        <p-button icon="pi pi-save" stileClass="ui-button-info" label="Guardar"></p-button>
                     </div>
                 </div>
             </div>
         </form>
         <p-footer>
-            <button type="button" pButton icon="pi pi-times" (click)="dis=false" label="Cancelar"
-                class="ui-button-secondary"></button>
+            <p-button  icon="pi pi-times" (click)="dis=false" label="Cancelar"
+            styleClass="ui-button-secondary"></p-button>
         </p-footer>
     </p-dialog>
 </div>

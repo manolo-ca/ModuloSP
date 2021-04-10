@@ -112,8 +112,9 @@
                     {{documentosp.estado}}
                  </td>
                 <td>
-                    <button pButton type="button" (click)="showDialog()" label="Aprovar" class="ui-button-raised ui-button-success"></button>
-   
+                   
+                    <p-button icon="pi pi-pencil"(click)="showDialog()" styleClass="ui-button-warning"  label="Editar"></p-button>
+               
                 </td>       
             </tr>
         </ng-template>
@@ -125,45 +126,44 @@
     </p-table>
     <p-dialog header="Creacion de documentos" [(visible)]="dis" [modal]="true" [style]="{width: '30vw'}" [maximizable]="true" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
         <form [formGroup]="addForm2">
-            <br>
-            <label for="input">Nombre</label><br>
-            <div>
-                <div class="ui-inputgroup">
-                    <input type="text" id="tipe_nom" name="tipe_nom" formControlName="tipe_nom" pInputText disabled> 
-             </div>
-            </div>
-            <br>
-            <label for="input">Descripcion</label><br>
-            <div>
-                <div class="ui-inputgroup">
-                    <input type="text" id="tipe_descripcion" name="tipe_descripcion" formControlName="tipe_descripcion" pInputText disabled> 
-            
+            <div class="ui-g ui-fluid">
+                <div class="ui-g form-group">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="input">Nombre</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                        <input type="text" id="tipe_nom" name="tipe_nom" formControlName="tipe_nom" pInputText disabled> 
+                   </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="input">Descripcion</label> 
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                        <input type="text" id="tipe_descripcion" name="tipe_descripcion" formControlName="tipe_descripcion" pInputText disabled> 
+                    </div>
+                    
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="input">Tipo de eucaristia</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                        <input type="text" id="tipe_doc" name="tipe_doc" formControlName="tipe_doc" pInputText disabled> 
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="input">Estado</label> 
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                        <p-dropdown id="tipe_estado" name="tipe_estado" formControlName="tipe_estado"  [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel=""></p-dropdown>        
+                    </div>
+                     <div class="ui-g-12 ui-md-4">
+                        <p-button icon="pi pi-save" stileClass="ui-button-info" label="Guardar"></p-button>
+                     </div>
+                   
                 </div>
             </div>
-            <br>
-            <label for="input">Tipo de eucaristia</label><br>
-            <div>
-                <div class="ui-inputgroup">
-                    <input type="text" id="tipe_doc" name="tipe_doc" formControlName="tipe_doc" pInputText disabled> 
             
-                </div>
-            </div>
-            <br>
-            <label for="input">Estado</label><br>
-            <div>
-                <div class="ui-inputgroup">
-                    <p-dropdown id="tipe_estado" name="tipe_estado" formControlName="tipe_estado"  [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel=""></p-dropdown>        
-             </div>
-            </div>
-            <br>
-            <div >
-                <button type="button" pButton label="Actualizar"></button>
-            </div>
-            <br>
         </form>
         <p-footer>
-            <button type="button" pButton icon="pi pi-times" (click)="dis=false" label="Cancelar" class="ui-button-secondary"></button>
-        </p-footer>
+            <p-button  icon="pi pi-times" (click)="dis=false" label="Cancelar"
+            styleClass="ui-button-secondary"></p-button></p-footer>
     </p-dialog>
 </div>
 

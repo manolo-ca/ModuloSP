@@ -2,8 +2,8 @@
     <h2>Bienvenidos al centro de administracion de Servicios</h2>
     <hr>
     <div>
-        <button pButton type="button" (click)="showDialog()" label="Agregar"
-            class="ui-button-raised ui-button-success"></button>
+        <p-button icon="pi pi-plus" (click)="showDialog()" label="Agregar"
+            styleClass="ui-button-success"></p-button>
 
     </div>
     <br>
@@ -22,8 +22,8 @@
                 <td>{{servicio.id}}</td>
                 <td>{{servicio.nombre}}</td>
                 <td>{{servicio.descripcion}}</td>
-                <td> <button pButton type="button" label="Editar"></button></td>
-                <td> <button pButton type="button" label="Eliminar" class="p-button-warning"></button></td>
+                <td> <p-button icon="pi pi-pencil" styleClass="ui-button-warning"  label="Editar"></p-button></td>
+                <td> <p-button icon="pi pi-trash"  styleClass="ui-button-danger"  label="Eliminar"></p-button></td>
             </tr>
 
         </ng-template>
@@ -54,7 +54,7 @@
 
 
                     <div class="ui-g-12">
-                        <button type="button" pButton label="Guardar"></button>
+                        <p-button icon="pi pi-save" stileClass="ui-button-info" label="Guardar"></p-button>
                     </div>
                     <br><br>
 
@@ -65,8 +65,8 @@
 
         </form>
         <p-footer>
-            <button type="button" pButton icon="pi pi-times" (click)="dis=false" label="Cancelar"
-                class="ui-button-secondary"></button>
+            <p-button  icon="pi pi-times" (click)="dis=false" label="Cancelar"
+                styleClass="ui-button-secondary"></p-button>
         </p-footer>
     </p-dialog>
 </div>

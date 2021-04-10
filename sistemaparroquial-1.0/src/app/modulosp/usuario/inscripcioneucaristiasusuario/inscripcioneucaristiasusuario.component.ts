@@ -5,12 +5,34 @@ import {SelectItem} from 'primeng/primeng';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-
+import {Inscripcioneucaristiasusuarioprueba} from './inscripcioneucaristiasusuarioprueba';
 @Component({
   selector: 'app-inscripcioneucaristiasusuario',
   templateUrl: './inscripcioneucaristiasusuario.component.html'
 })
 export class InscripcioneucaristiasusuarioComponent implements OnInit {
+  inscripcioneu:Inscripcioneucaristiasusuarioprueba[]=[
+    {
+      cedula:124,
+      nombre:'lucas',
+      apellido:'moreno',
+      fecha:'21/12/2021',
+      tipo:'bautizo',
+      descripcion:'lalalalala'
+      
+  },
+  {
+      cedula:124,
+      nombre:'lucas',
+      apellido:'moreno',
+      fecha:'21/12/2021',
+      tipo:'bautizo',
+      descripcion:'lalalalala'
+    
+},
+
+  ];
+
   addForm: FormGroup;
   
   submitted = false;

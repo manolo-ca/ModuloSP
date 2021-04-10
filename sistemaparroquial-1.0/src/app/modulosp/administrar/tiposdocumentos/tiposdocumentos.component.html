@@ -1,8 +1,8 @@
 <div class="card">
     <h2>Agregar Tipos de Documentos</h2>
     <hr>
-    <button pButton type="button" (click)="showDialog()" label="Generar"
-        class="ui-button-raised ui-button-success"></button>
+    <p-button icon="pi pi-plus" (click)="showDialog()" label="Agregar"
+            styleClass="ui-button-success"></p-button>
     <br>
     <br>
     <p-table [value]="documentos">
@@ -24,9 +24,8 @@
                 <td>{{documento.libro}}</td>
                 <td>{{documento.referencia}}</td>
                 <td>{{documento.valor}}</td>
-                <td> <button pButton type="button" label="Editar"></button></td>
-                <td> <button pButton type="button" label="Eliminar" class="p-button-warning"></button></td>
-            </tr>
+                <td> <p-button icon="pi pi-pencil" styleClass="ui-button-warning"  label="Editar"></p-button></td>
+                <td> <p-button icon="pi pi-trash"  styleClass="ui-button-danger"  label="Eliminar"></p-button></td> </tr>
         </ng-template>
     </p-table>
     <p-dialog header="Creacion de documentos" [(visible)]="dis" [modal]="true" [style]="{width: '30vw'}"
@@ -66,15 +65,15 @@
                             placeholder="Valor">
                     </div>
                     <div class="ui-g-12">
-                        <button type="button" pButton label="Guardar"></button>
-                    </div>
+                        <p-button icon="pi pi-save" stileClass="ui-button-info" label="Guardar"></p-button>
+                     </div>
 
                 </div>
             </div>
         </form>
         <p-footer>
-            <button type="button" pButton icon="pi pi-times" (click)="dis=false" label="Cancelar"
-                class="ui-button-secondary"></button>
+            <p-button  icon="pi pi-times" (click)="dis=false" label="Cancelar"
+                styleClass="ui-button-secondary"></p-button>
         </p-footer>
     </p-dialog>
 </div>

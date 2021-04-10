@@ -50,8 +50,8 @@
             </div>
             <div class="ui-g-12">
 
-                <button pButton label="Agregar documentos" class="p-button-outlined" icon="pi pi-filter-slash" [routerLink]="['/modulosp/administrar/documentopersonascrear']"></button>
-
+                <p-button icon="pi pi-plus" label="Agregar" styleClass="ui-button-success"></p-button>
+            
             </div>
                  
         </div>
@@ -126,8 +126,8 @@
                     {{documentosp.referencia}}
                 </td> 
                 <td>
-                    <button pButton label="Eliminar" class="p-button-outlined" icon="pi pi-filter-slash" [routerLink]="['/modulosp/administrar/documentopersonascrear']"></button>
-            
+                 <p-button icon="pi pi-trash"  styleClass="ui-button-danger"  label="Eliminar"></p-button>
+       
                 </td>        
             </tr>
         </ng-template>
