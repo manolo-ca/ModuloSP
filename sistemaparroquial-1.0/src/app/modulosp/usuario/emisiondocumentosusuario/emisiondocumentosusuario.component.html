@@ -44,14 +44,12 @@
                 <br>
     
                 <div class="ui-g-12 ui-md-2">
-                    <label for="input">Fecha de registro:</label>
+                    <label for="input">Fecha de Resgistro:</label>
                 </div>
-    
                 <div class="ui-g-12 ui-md-4">
-                    <div class="p-inputgroup">
-    
-                        <input type="text" required pInputText placeholder="Fecha de registro ">
-                        <span class="p-inputgroup-addon"></span>
+                    <p-calendar formControlName="inse_fecharegistro" name="inse_fecharegistro" id="inse_fecharegistro" [(ngModel)]="fec2" [showIcon]="true" class="form-control" placeholder="AAAA/MM/DD"></p-calendar>
+                    <div *ngIf="submitted && !!f.inse_fecharegistro.errors" class="invalid-feedback">
+                        <div *ngIf="!!f.inse_fecharegistro.errors.required">Campo requerido</div>
                     </div>
                 </div>
                 <br>

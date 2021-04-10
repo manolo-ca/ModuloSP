@@ -7,7 +7,7 @@
         <div class="card card-w-title">
             <div class="ui-g form-group">
                 <div class="ui-g-12 ui-md-8">
-                    <input type="text" required pInputText placeholder="Nombre Completos">
+                    <input type="text" required pInputText placeholder="Cedula">
                 </div>
                 <div class="ui-g-12 ui-md-4">
                     <p-button   label="Buscar" class="p-button-outlined" icon="pi pi-search" styleClass="ui-button-success"></p-button>
@@ -36,7 +36,21 @@
                         <div *ngIf="!!f.inse_fecharegistro.errors.required">Campo requerido</div>
                     </div>
                 </div>
-                
+                <div class="ui-g-12 ui-md-2">
+                <label for="input">Evento:</label>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <p-dropdown id="inse_tiposeucaristias" name="inse_tiposeucaristias" formControlName="inse_tiposeucaristias"  [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel="aula_nombre" ></p-dropdown>
+                </div>
+                <div class="ui-g-12 ui-md-2">
+                    <label for="input">Hora:</label>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <input maxlength="250" disabled formControlName="inse_valorvoluntario" name="inse_valorvoluntario" id="inse_valorvoluntario" type="text" pInputText  class="form-control">
+                    <div *ngIf="submitted && !!f.inse_valorvoluntario.errors" class="invalid-feedback">
+                        <div *ngIf="!!f.inse_valorvoluntario.errors.required">Campo requerido</div>
+                    </div>
+                </div>
                 <div class="ui-g-12 ui-md-2">
                     <label for="input">Valor a Cancelar:</label>
                 </div>
