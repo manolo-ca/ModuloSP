@@ -16,6 +16,7 @@ export class ReservacioneucaristiasComponent implements OnInit {
   cols: any[];
   inscripciones: any[];
   tipo = {};
+  addForm1: FormGroup;
 
   showDialog() {
     this.dis = true;
@@ -58,6 +59,32 @@ export class ReservacioneucaristiasComponent implements OnInit {
       tipe_doc: ['', Validators.required],
       tipe_estado: ['', Validators.required]
     });
+    this.addForm1 = this.formBuilder.group({
+      tipe_fecha_i: ['', Validators.required],
+      tipe_fecha_f: ['', Validators.required],
+      tipe_documento: ['', Validators.required]
+      
+    });
+  }
+  displayModal: boolean;
+
+  displayBasic: boolean;
+
+  displayBasic2: boolean;
+
+  displayPosition: boolean;
+
+  position: string;
+
+  showModalDialog() {
+      this.displayModal = true;
   }
 
+  showBasicDialog() {
+      this.displayBasic = true;
+  }
+  showPositionDialog(position: string) {
+    this.position = position;
+    this.displayPosition = true;
+}
 }

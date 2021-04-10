@@ -179,7 +179,7 @@
                     </div>
                     <div class="ui-g-12 ui-md-8"> 
                          
-                        <p-calendar id="tipe_fecha_i" name="tipe_fecha_i" formControlName="tipe_fecha_i" formControlName="inse_fecharegistro" name="inse_fecharegistro" id="inse_fecharegistro" [(ngModel)]="fec2" [showIcon]="true" class="form-control" placeholder="AAAA/MM/DD"></p-calendar>
+                        <p-calendar id="tipe_fecha_i" name="tipe_fecha_i" formControlName="tipe_fecha_i"  [(ngModel)]="fec2" [showIcon]="true" class="form-control" placeholder="AAAA/MM/DD"></p-calendar>
                     
                     </div>
                     <div  class="ui-g-12 ui-md-4">
@@ -187,7 +187,7 @@
                     </div>
                     <div class="ui-g-12 ui-md-8"> 
                         
-                        <p-calendar id="tipe_fecha_f" name="tipe_fecha_f" formControlName="tipe_fecha_f" formControlName="inse_fecharegistro" name="inse_fecharegistro" id="inse_fecharegistro" [(ngModel)]="fec2" [showIcon]="true" class="form-control" placeholder="AAAA/MM/DD"></p-calendar>
+                        <p-calendar id="tipe_fecha_f" name="tipe_fecha_f" formControlName="tipe_fecha_f"[(ngModel)]="fec2" [showIcon]="true" class="form-control" placeholder="AAAA/MM/DD"></p-calendar>
                     
                     </div>
                     <div  class="ui-g-12 ui-md-4">
@@ -195,7 +195,7 @@
                     </div>
                     <div class="ui-g-12 ui-md-8">
                         
-                        <p-dropdown id="tipe_documento" name="tipe_documento" formControlName="tipe_documento" id="inse_tiposeucaristias" name="inse_tiposeucaristias" formControlName="inse_tiposeucaristias"  [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel="aula_nombre"></p-dropdown>
+                        <p-dropdown id="tipe_documento" name="tipe_documento" formControlName="tipe_documento"   [options]="inscripciones" [(ngModel)]="tipo" [filter]="true" optionLabel="aula_nombre"></p-dropdown>
                 
                     </div>
                     <div class="ui-g-12 ui-md-4">
